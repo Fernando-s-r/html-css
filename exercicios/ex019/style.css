@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+ body {
+    background-image: linear-gradient(to right, #44344F, #564D80);
+ }
+
+ h1 {
+    color: #107e15
+ }
+
+ h1#principal {
+    text-align: center;
+    color: #44344F;
+    background-color: #C2F970;
+ }
+
+ h2 {
+    color: #98A6D4;
+ }
+
+ main {
+    background-image: linear-gradient(to right, #ffffff1e, #ce09092f);
+    background-color: #ffffff;
+    width: 600px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px #11113096;
+}
+
+body {
+    background-image: linear-gradient(to right, #3B3B5C, #292933);
+}
+h2.basico{
+    color: rgb(42, 165, 73);
+}
+
+h2.intermediario {
+    color: gold;
+}
+
+h2.avansado {
+    color: brown;
+}
+
+.destaq {
+    background-color: rgba(0, 0, 0, 0.308);
+}
+
+p {
+    
+    text-indent: 30px;
+    
+}
