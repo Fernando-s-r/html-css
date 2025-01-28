@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Social - Fernando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="profile">
+            <img src="img/background002.jpg" 
+                 alt="Foto de perfil de Fernando" 
+                 class="profile-img"
+                 loading="lazy">
+            <h1>Fernando Reis</h1>
+            <p class="bio">Desenvolvedor Front-end</p>
+        </header>
+
+        <nav class="social-nav" aria-label="Redes sociais">
+            <ul class="social-links">
+                <li>
+                    <a href="https://github.com/Fernando-s-r" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="GitHub">
+                        <ion-icon name="logo-github" class="social-icon"></ion-icon>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/seu-perfil" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn">
+                        <ion-icon name="logo-linkedin" class="social-icon"></ion-icon>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/seu-canal" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="YouTube">
+                        <ion-icon name="logo-youtube" class="social-icon"></ion-icon>
+                        <span>YouTube</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:seuemail@provedor.com" 
+                       aria-label="Enviar email">
+                        <ion-icon name="mail-outline" class="social-icon"></ion-icon>
+                        <span>Contato</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <button class="theme-switcher" aria-label="Alternar tema">
+        <ion-icon name="contrast-outline"></ion-icon>
+    </button>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+        // Tema claro/escuro
+        const themeSwitcher = document.querySelector('.theme-switcher');
+        const body = document.body;
+
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // Verificar preferência salva
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') body.classList.add('light-theme');
+    </script>
+</body>
+</html>
