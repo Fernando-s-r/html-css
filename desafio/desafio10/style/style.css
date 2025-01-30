@@ -212,3 +212,16 @@ footer a:hover {
     text-decoration: underline;
     color: var(--cor01);
 }
+
+@media (max-width: 768px) {
+    .logo,
+    nav a {
+        float: none;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
