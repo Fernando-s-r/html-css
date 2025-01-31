@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro Completo</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+        }
+
+        input[type="file"] {
+            padding: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="meuForm" action="#" method="POST" enctype="multipart/form-data">
+            <!-- Ano de Nascimento -->
+            <div class="form-group">
+                <label for="anoNascimento">Ano de Nascimento:</label>
+                <select id="anoNascimento" name="anoNascimento" required>
+                    <option value="">Selecione o ano</option>
+                    <option>2000</option>
+                    <option>1999</option>
+                    <option>1998</option>
+                    <!-- Adicione manualmente os anos necessários -->
+                </select>
+            </div>
+
+            <!-- Cidade -->
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input list="cidades" id="cidade" name="cidade" required
+                       placeholder="Digite sua cidade">
+                <datalist id="cidades">
+                    <option value="São Paulo">
+                    <option value="Rio de Janeiro">
+                    <option value="Belo Horizonte">
+                    <option value="Salvador">
+                    <option value="Brasília">
+                </datalist>
+            </div>
+
+            <!-- Sexo -->
+            <div class="form-group">
+                <label>Gênero:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="genero" value="masculino" required>
+                        Masculino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="feminino">
+                        Feminino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="nao-informar">
+                        Prefiro não informar
+                    </label>
+                </div>
+            </div>
+
+            <!-- Upload de Foto -->
+            <div class="form-group">
+                <label for="foto">Envio de Foto:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required
+                       onchange="previewImage(event)">
+                <small>Apenas arquivos JPG, PNG ou GIF (Máx. 5MB)</small>
+                <div id="imagePreview" style="margin-top:10px;"></div>
+            </div>
+
+            <button type="submit">Enviar Formulário</button>
+        </form>
+    </div>
+    <script>
+        // ==============================================
+        // GERADOR DE ANOS DINÂMICOS
+        // ==============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectAno = document.getElementById('anoNascimento');
+            const anoAtual = new Date().getFullYear();
+            
+            // Limpa opções existentes (exceto a primeira)
+            while(selectAno.options.length > 1) {
+                selectAno.remove(1);
+            }
+
+            // Adiciona anos de 2024 até 1900
+            for(let ano = anoAtual; ano >= 1800; ano--) {
+                const option = document.createElement('option');
+                option.value = ano;
+                option.textContent = ano;
+                selectAno.appendChild(option);
+            }
+        });
+
+        // ==============================================
+        // VALIDAÇÃO DO FORMULÁRIO
+        // ==============================================
+        document.getElementById('meuForm').addEventListener('submit', function(e) {
+            // Validação do Ano
+            const anoSelecionado = document.getElementById('anoNascimento').value;
+            const anoError = document.getElementById('anoError');
+            
+            if(!anoSelecionado) {
+                anoError.textContent = "Selecione um ano válido";
+                e.preventDefault();
+            } else {
+                anoError.textContent = "";
+            }
+
+            // ... (mantenha as outras validações do formulário) ...
+        });
+
+        // ==============================================
+        // FUNÇÃO DE FOCO PARA MELHOR UX
+        // ==============================================
+        document.getElementById('anoNascimento').addEventListener('invalid', function() {
+            this.focus();
+        });
+    </script>
+    
+</body>
+</html>
