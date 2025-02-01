@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+
+
+main {
+    background-color: white;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+img {
+    display: none;
+    max-width: 200px;
+    margin: 20px auto;
+}
+
+/* Versão para Impressão */
+@media print {
+    #print {
+        display: block;
+    }
+    body {
+        background-color: white;
+        box-shadow: none;
+    }
+}
+
+/* Dispositivos pequenos (celulares) */
+@media screen and (max-width: 600px) {
+    #phone {
+        display: block;
+
+        }
+        body {
+    
+            background-image: url(../img/back-phone.jpg) ;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-position: cover;
+        }
+    
+}
+
+/* Dispositivos médios (tablets) */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    #tablet {
+        display: block;
+    }
+}
+
+/* Dispositivos grandes (desktops) */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    #pc {
+        display: block;
+    }
+}
+
+/* TVs e telas grandes */
+@media screen and (min-width: 1200px) {
+    #tv {
+        display: block;
+    }
+}
