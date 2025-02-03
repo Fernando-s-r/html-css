@@ -1,0 +1,58 @@
+@media screen and (min-width: 768px) {
+    #burguer {
+        display: none;
+    }
+
+    menu {
+        display: block;
+    }
+    
+    menu > ul > li {
+        display: inline-block;
+    }
+
+    main {
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    /* Novos estilos para duas colunas */
+    article {
+        column-count: 2;
+        column-gap: 40px;
+        column-rule: 1px solid black;
+    }
+
+    article h2 {
+        column-span: all; /* Faz o título ocupar as duas colunas */
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.2em;
+    }
+
+    article p {
+        text-indent: 2em;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        hyphens: auto;
+    }
+
+    /* Melhorias no layout do menu */
+    menu > ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 25px;
+        padding-right: 20px;
+    }
+
+    menu a {
+        transition: all 0.3s ease;
+        padding: 12px 25px;
+        border-radius: 5px;
+    }
+
+    menu a:hover {
+        background-color: #666;
+        transform: translateY(-2px);
+    }
+}

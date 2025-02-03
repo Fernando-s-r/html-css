@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stilo/style.css">
+    <link rel="stylesheet" href="stilo/maiores.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
-<body>
+<body onresize="mudoutamanho()">
       <header>
         <h1>Meu Site</h1>
         <span id="burguer"   class="material-symbols-outlined" onclick="clickmenu()" >
@@ -41,6 +42,16 @@
           </article>
       </main>
       <script>
+          
+        function mudoutamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+
           function clickmenu() {
                 if (itens.style.display == 'block') {
                     itens.style.display = 'none'

@@ -52,7 +52,7 @@ menu > ul > li > a {
 }
 
 menu > ul > li > a:hover {
-    background-color: rgba(223, 15, 15, 0.5);
+    background-color: rgba(0, 0, 0, 0.541);
 }
 
 main {
