@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 
-html {
+body {
     height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
 }
-
-
 
 main {
     background-color: white;
@@ -16,14 +16,13 @@ main {
     margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
 }
 
 h1 {
-    color: white;
+    color: #333;
     margin-bottom: 20px;
-    text-align: center;
 }
 
 img {
@@ -47,23 +46,22 @@ img {
 @media screen and (max-width: 600px) {
     #phone {
         display: block;
-
-        }
-        body {
-    
-            background-image: url(../img/back-phone.jpg) ;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-position: cover;
-        }
-    
+    }
+    body {
+        background-image: url(../img/back-phone.jpg);
+        background-position: center center;
+   }
 }
 
 /* Dispositivos médios (tablets) */
-@media screen and (min-width: 601px) and (max-width: 768px) {
+@media screen and (min-width: 600px) and (max-width: 768px) {
     #tablet {
         display: block;
     }
+     body{
+        background-image: url(../img/back-tablet.jpg);
+        background-position: center center;
+         }
 }
 
 /* Dispositivos grandes (desktops) */
@@ -71,11 +69,19 @@ img {
     #pc {
         display: block;
     }
+    body{
+        background-image: url(../img/back-pc.jpg);
+        background-position: center ;
+         }
 }
 
 /* TVs e telas grandes */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px)  {
     #tv {
         display: block;
     }
+    body{
+        background-image: url(../img/back-tv.jpg);
+        background-position: center center;
+         }
 }
