@@ -1,0 +1,266 @@
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Times New Roman', serif;
+    line-height: 1.6;
+    background-color: #f4f1ea;
+    color: #333;
+  }
+  
+  /* Estilo do cabeçalho */
+  header {
+    background: linear-gradient(to top, #2c1810 0%, #1a0e08 100%);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #d4af37;
+  }
+  
+  header h1 {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+  
+  /* Navegação */
+  nav {
+    background: #2c1810;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav a {
+    color: #d4af37;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+  }
+  
+  nav a:hover {
+    background-color: #d4af37;
+    color: #2c1810;
+  }
+  
+  /* Container principal */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* Seções */
+  section {
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #2c1810;
+    border-bottom: 3px solid #d4af37;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'MedievalSharp', cursive;
+  }
+  
+  /* Grid de cards */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #d4af37;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card h3 {
+    color: #2c1810;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Listas */
+  ul {
+    padding-left: 2rem;
+    margin: 1rem 0;
+  }
+  
+  li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  strong {
+    color: #2c1810;
+  }
+  
+  /* Rodapé */
+  footer {
+    background: #2c1810;
+    color: #d4af37;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  footer a {
+     text-decoration: none;
+     color: white;
+  }
+
+  
+
+  footer {
+    background: #2c1810;
+    color: #d4af37;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .github-link {
+    color: #d4af37;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .github-link:hover {
+    color: #fff;
+  }
+  
+  .github-link i {
+    font-size: 1.2em;
+  }
+  
+  @media (max-width: 480px) {
+    footer {
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .github-link i {
+      font-size: 1rem;
+    }
+  }
+
+  
+  
+  @media (max-width: 768px) {
+    nav {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    nav a {
+      margin: 0.3rem 0;
+    }
+  
+    header h1 {
+      font-size: 2.5rem;
+    }
+  
+    .container {
+      padding: 1rem;
+    }
+  
+    section {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    html {
+      font-size: 14px;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Fonte medieval (adicionar link no HTML) */
+  @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+  /* Menu Mobile */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #d4af37;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #3a2218;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #4a3329;
+  }
+}
