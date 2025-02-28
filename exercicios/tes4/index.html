@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desenvolvedor Web Freelancer - Criação de Sites Profissionais">
+    <title>Dev Freelancer - SeuNome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="stilo/style.css">
+</head>
+<body>
+    <!-- Botões Flutuantes -->
+    <div class="floating-buttons">
+        <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+        <a href="https://wa.me/5511999999999" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <div class="logo">Dev<span>Freela</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Criação de Sites Profissionais</h1>
+            <p style="margin: 1rem 0">Transformando ideias em realidade digital</p>
+            <a href="#contato" class="cta-button">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="servicos">
+        <h2 style="text-align: center; font-size: 2.5rem" data-aos="fade-up">Serviços</h2>
+        <div class="servicos-grid">
+            <div class="servico-card" data-aos="zoom-in">
+                <i class="fas fa-code fa-3x" style="color: var(--primary-color); margin: 1rem 0"></i>
+                <h3>Desenvolvimento Web</h3>
+                <p>Sites responsivos, sistemas personalizados e APIs</p>
+                <div style="margin: 1rem 0; color: var(--primary-color)">A partir de R$ 1.999</div>
+            </div>
+            <div class="servico-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-palette fa-3x" style="color: var(--primary-color); margin: 1rem 0"></i>
+                <h3>Design UI/UX</h3>
+                <p>Interfaces modernas e experiências intuitivas</p>
+                <div style="margin: 1rem 0; color: var(--primary-color)">A partir de R$ 999</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contato">
+        <div style="max-width: 800px; margin: 0 auto">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem" data-aos="fade-up">Contato</h2>
+            <form id="contactForm" data-aos="fade-up">
+                <div class="form-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Nome Completo</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Seu Melhor E-mail</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" required></textarea>
+                    <label for="message">Descreva seu Projeto</label>
+                </div>
+                <button type="submit" class="cta-button">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>
