@@ -18,14 +18,12 @@ class Particle {
 
     update() {
         if(this.isDragon) {
-            // Movimento suave para partículas do dragão
             this.x = this.baseX + Math.sin(Date.now() * 0.001 + this.phase) * 100;
             this.y = this.baseY + Math.cos(Date.now() * 0.001 + this.phase) * 100;
         } else {
             this.x += this.velocity.x;
             this.y += this.velocity.y;
 
-            // Colisão com bordas
             if (this.x < 0 || this.x > this.canvas.width) this.velocity.x *= -1;
             if (this.y < 0 || this.y > this.canvas.height) this.velocity.y *= -1;
         }
@@ -53,14 +51,13 @@ class ParticleSystem {
     }
 
     createDragon() {
-        // Forma do dragão (coordenadas relativas)
         const dragonShape = [
-            [50, 50], [60, 45], [70, 40], [80, 45], [90, 50], // Cabeça
-            [70, 55], [65, 65], [60, 75], [55, 85], [50, 95], // Pescoço
-            [60, 100], [70, 105], [80, 100], [90, 95], // Corpo
-            [75, 85], [85, 80], [95, 75], [105, 70], // Cauda
-            [40, 60], [30, 55], [20, 50], // Asa esquerda
-            [100, 60], [110, 55], [120, 50] // Asa direita
+            [50, 50], [60, 45], [70, 40], [80, 45], [90, 50],
+            [70, 55], [65, 65], [60, 75], [55, 85], [50, 95],
+            [60, 100], [70, 105], [80, 100], [90, 95],
+            [75, 85], [85, 80], [95, 75], [105, 70],
+            [40, 60], [30, 55], [20, 50],
+            [100, 60], [110, 55], [120, 50]
         ];
 
         const centerX = this.canvas.width/2;
