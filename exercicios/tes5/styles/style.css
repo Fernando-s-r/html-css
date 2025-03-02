@@ -73,21 +73,34 @@ section {
 .social-links {
     margin-top: 2rem;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     justify-content: center;
 }
 
 .social-links a {
     color: var(--primary-color);
-    font-size: 2rem;
-    transition: transform 0.3s ease;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem;
 }
 
 .social-links a:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    text-shadow: 0 0 15px var(--primary-color);
 }
 
 @keyframes glow {
     from { text-shadow: 0 0 10px var(--primary-color); }
     to { text-shadow: 0 0 30px var(--primary-color); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.social-links a:hover i {
+    animation: pulse 1s infinite;
 }

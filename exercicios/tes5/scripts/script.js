@@ -132,3 +132,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// Efeitos nos botões sociais
+document.querySelectorAll('.social-links a').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        link.style.transform = 'translateY(-5px)';
+    });
+    
+    link.addEventListener('mouseleave', () => {
+        link.style.transform = 'translateY(0)';
+    });
+});
