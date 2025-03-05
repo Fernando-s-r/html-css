@@ -15,7 +15,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
+    width: 100vw;  /* Novo */
+    height: 100vh; /* Novo */
+    z-index: 0;
+    pointer-events: none;
 }
 
 .sidebar {
@@ -53,6 +56,9 @@ body {
     margin-left: 250px;
     padding: 4rem;
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0); /* Melhoria de performance */
 }
 
 section {
@@ -114,38 +120,39 @@ h2 {
 }
 
 @media (max-width: 768px) {
-.hamburger {
-display: block;
-}
+    .hamburger {
+        display: block;
+    }
 
-.sidebar {
-position: fixed;
-left: -250px;
-top: 0;
-width: 250px; /* Adicionado */
-height: 100vh;
-transition: all 0.3s ease-in-out;
-z-index: 999;
-}
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+    }
 
-.sidebar.active {
-left: 0;
-}
+    .sidebar.active {
+        left: 0;
+    }
 
-.hamburger.active .line:nth-child(1) {
-transform: rotate(45deg) translate(5px, 6px);
-}
+    .hamburger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
 
-.hamburger.active .line:nth-child(2) {
-opacity: 0;
-}
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
 
-.hamburger.active .line:nth-child(3) {
-transform: rotate(-45deg) translate(5px, -6px);
-}
+    .hamburger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
 
-.main-content {
-margin-left: 0;
-padding: 2rem;
-}
+    .main-content {
+        margin-left: 0;
+        padding: 2rem;
+        z-index: 1; /* Novo */
+    }
 }

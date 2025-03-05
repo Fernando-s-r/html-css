@@ -461,3 +461,54 @@
           sidebar.classList.remove('active');
       }
   });
+
+  // novo
+  // No final do seu script.js
+window.addEventListener('scroll', function() {
+  // Força redimensionamento durante a rolagem
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  // Atualiza posições relativas
+  critter.x = canvas.width / 2;
+  critter.y = canvas.height / 2;
+});
+
+// Adicione este trecho na função de redimensionamento existente
+window.addEventListener('resize', function() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  critter.x = canvas.width / 2;
+  critter.y = canvas.height / 2;
+});
+
+
+// --
+
+// No final do seu script.js
+let lastScrollY = 0;
+
+function handleScroll() {
+    // Atualiza posição relativa ao scroll
+    critter.y = (window.innerHeight / 2) + window.scrollY;
+    
+    // Força redesenho contínuo
+    canvas.width = window.innerWidth;
+    canvas.height = document.documentElement.scrollHeight; // Altura total da página
+    
+    // Atualiza a cada frame
+    requestAnimationFrame(() => {
+        critter.follow(Input.mouse.x, Input.mouse.y + window.scrollY);
+    });
+}
+
+// Atualiza o listener de scroll
+window.addEventListener('scroll', handleScroll);
+
+// Modifique a função de resize existente
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.documentElement.scrollHeight;
+    critter.x = window.innerWidth / 2;
+    critter.y = (window.innerHeight / 2) + window.scrollY;
+});
