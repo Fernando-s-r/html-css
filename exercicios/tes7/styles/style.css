@@ -1,0 +1,164 @@
+
+    /* --- Reset CSS --- */
+    /* Remove margens, paddings padrões e define box-model para todos elementos */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Mantém a largura definida mesmo com padding */
+    }
+
+    /* --- Estilos Gerais --- */
+    body {
+        font-family: Arial, sans-serif; /* Define fonte padrão */
+        line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+    }
+
+    /* --- Header/Navegação --- */
+    header {
+        background-color: #2c3e50; /* Cor de fundo escura */
+        color: white; /* Cor do texto */
+        padding: 1rem; /* Espaçamento interno */
+    }
+
+    nav {
+        display: flex; /* Ativa Flexbox */
+        justify-content: space-between; /* Espaço entre logo e links */
+        align-items: center; /* Centraliza verticalmente */
+        max-width: 1200px; /* Largura máxima do conteúdo */
+        margin: 0 auto; /* Centraliza na página */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Tamanho do texto do logo */
+        font-weight: bold; /* Peso da fonte */
+    }
+
+    .nav-links {
+        list-style: none; /* Remove marcadores de lista */
+        display: flex; /* Disposição em linha dos links */
+        gap: 2rem; /* Espaço entre os itens */
+    }
+
+    .nav-links a {
+        color: white; /* Cor dos links */
+        text-decoration: none; /* Remove sublinhado */
+        transition: color 0.3s; /* Suaviza mudança de cor */
+    }
+
+    .nav-links a:hover {
+        color: #4CAF50; /* Cor ao passar o mouse */
+    }
+
+    /* --- Seção Hero (Destaque) --- */
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* Overlay escuro */
+                    url('../img/geometric-1732847_1280.jpg') center/cover; /* Imagem de fundo */
+        height: 60vh; /* Altura relativa à tela */
+        display: flex;
+        align-items: center; /* Centraliza verticalmente */
+        justify-content: center; /* Centraliza horizontalmente */
+        text-align: center; /* Alinhamento do texto */
+        color: white; /* Cor do texto */
+        padding: 2rem; /* Espaçamento interno */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Tamanho do título principal */
+        margin-bottom: 1rem; /* Espaço abaixo do título */
+    }
+
+    /* --- Seção de Recursos --- */
+    .features {
+        max-width: 1200px; /* Largura máxima do conteúdo */
+        margin: 4rem auto; /* Centraliza com espaço externo */
+        padding: 0 2rem; /* Espaçamento interno lateral */
+        display: flex;
+        gap: 2rem; /* Espaço entre os cards */
+        flex-wrap: wrap; /* Quebra linha em telas pequenas */
+        justify-content: center; /* Centraliza cards */
+    }
+
+    .feature-card {
+        flex: 1; /* Cresce igualmente */
+        min-width: 300px; /* Largura mínima dos cards */
+        padding: 2rem; /* Espaçamento interno */
+        background-color: #f4f4f4; /* Cor de fundo */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.322);
+        border-radius: 10px; /* Bordas arredondadas */
+        text-align: center; /* Alinhamento do conteúdo */
+        transition: transform 0.3s; /* Animação suave */
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px); /* Efeito de levantar ao passar mouse */
+    }
+
+    .feature-card img {
+        width: 100px; /* Largura fixa das imagens */
+        height: 100px; /* Altura fixa das imagens */
+        margin-bottom: 1rem; /* Espaço abaixo da imagem */
+    }
+
+    /* --- Footer --- */
+    footer {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        border-top: 3px solid #3498db;
+    }
+    
+    footer p {
+        text-align: center;
+        margin: 0.5rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    footer a {
+        color: #3498db;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    footer a:hover {
+        color: #1abc9c;
+    }
+    
+    .fa-github {
+        font-size: 1.2em;
+        transition: transform 0.3s ease;
+    }
+    
+    footer a:hover .fa-github {
+        transform: scale(1.2);
+    }
+
+    /* --- Responsividade --- */
+    @media (max-width: 768px) { /* Breakpoint para tablets/mobile */
+        .nav-links {
+            flex-direction: column; /* Empilha links verticalmente */
+            gap: 1rem; /* Reduz espaço entre links */
+            text-align: center; /* Centraliza texto */
+        }
+
+        .hero-content h1 {
+            font-size: 2rem; /* Reduz tamanho do título */
+        }
+
+        .features {
+            flex-direction: column; /* Empilha cards verticalmente */
+        }
+    }
+
+    @media (max-width: 480px) { /* Breakpoint para mobile pequeno */
+        .feature-card {
+            min-width: 100%; /* Cards ocupam largura total */
+        }
+    }
